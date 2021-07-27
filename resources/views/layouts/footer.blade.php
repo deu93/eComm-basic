@@ -16,5 +16,10 @@
         height: 500px;
         padding-top: 100px;
     }
+    .custom-cart{
+        padding-right: 150px;
+        font-size: 20px;
+        font-weight: bold;
+    }
 </style>
 </html>
