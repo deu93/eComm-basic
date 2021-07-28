@@ -17,7 +17,8 @@
         padding-top: 100px;
     }
     .custom-cart{
-        padding-right: 150px;
+        padding-left: 400px;
+        padding-right: 100px;
         font-size: 20px;
         font-weight: bold;
     }
