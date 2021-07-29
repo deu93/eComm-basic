@@ -1,5 +1,5 @@
 <footer class="container">
-      <p>&copy; Company 2017-2018</p>
+      <p>&copy; Company 2021</p>
 </footer>
 
 
@@ -21,6 +21,19 @@
         padding-right: 100px;
         font-size: 20px;
         font-weight: bold;
+    }
+    img.slider-img {
+        padding-left: 400px;
+        height: 400px !important;
+        margin-bottom: 160px;
+    }
+
+    .custom-product {
+        height: 600px;
+    }
+
+    .slider-text {
+        background-color: #35443585 !important;
     }
 </style>
 </html>
