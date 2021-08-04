@@ -1,21 +1,14 @@
-@php
+<?php
 use App\Http\Controllers\ProductController;
-    $total = ProductController::cartItem();
-@endphp
+$total = 0;
+if(Session::has('user')){
+  $total = ProductController::cartItem();
+}
+?>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>E-comm project</title>
-</head>
-<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Shop</a>
+  <a class="navbar-brand" href="/">E-comm</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,7 +16,7 @@ use App\Http\Controllers\ProductController;
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Orders</a>
@@ -34,11 +27,40 @@ use App\Http\Controllers\ProductController;
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       
-      <ul class="navbar-nav custom-cart">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cart({{ $total }})</a>
-        </li>
-    </ul>
+      @if (Session::has('user'))
+        <ul class="navbar-nav custom-cart">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart({{ $total }})</a>
+          </li>
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ Session::get('user')['name'] }}
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </div>
+          
+          
+        </ul>
+      @else
+        <ul class="navbar-nav custom-cart1">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Register</a>
+          </li>
+        </ul>
+      @endif
+        
+      
+      
+     
+      
+     
+     
     </form>
   </div>
 </nav>

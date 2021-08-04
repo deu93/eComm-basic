@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\auth\LoginController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\auth\LoginController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,15 +15,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login', function() {
+    return view('login');
+});
+Route::get('/logout', function() {
+    Session::forget('user');
+    return redirect('login');
+});
+
 
 Route::get('/', [ProductController::class, 'index'])->name('home');
-
-Route::get('/login', function() {return view('login');});
-
 Route::post('/login', [LoginController::class, 'index'])->name('login');
-
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
-
 Route::post('/add_to_cart', [ProductController::class, 'addToCart'])->name('add_to_cart');
 
 

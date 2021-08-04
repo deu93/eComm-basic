@@ -20,8 +20,14 @@
         padding-top: 100px;
     }
     .custom-cart{
+        padding-left: 330px;
+        padding-right: 50px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .custom-cart1{
         padding-left: 400px;
-        padding-right: 100px;
+        padding-right: 50px;
         font-size: 20px;
         font-weight: bold;
     }
