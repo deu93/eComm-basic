@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\auth\LoginController;
 
@@ -28,5 +29,6 @@ Route::get('/', [ProductController::class, 'index'])->name('home');
 Route::post('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 Route::post('/add_to_cart', [ProductController::class, 'addToCart'])->name('add_to_cart');
+Route::get('/cartlist', [ProductController::class, 'cartList']);
 
 

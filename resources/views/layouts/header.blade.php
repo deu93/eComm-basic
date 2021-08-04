@@ -30,7 +30,7 @@ if(Session::has('user')){
       @if (Session::has('user'))
         <ul class="navbar-nav custom-cart">
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart({{ $total }})</a>
+            <a class="nav-link" href="/cartlist">Cart({{ $total }})</a>
           </li>
           <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,8 +41,6 @@ if(Session::has('user')){
               <a class="dropdown-item" href="/logout">Logout</a>
             </div>
           </div>
-          
-          
         </ul>
       @else
         <ul class="navbar-nav custom-cart1">
