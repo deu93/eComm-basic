@@ -30,5 +30,6 @@ Route::post('/login', [LoginController::class, 'index'])->name('login');
 Route::get('/detail/{id}', [ProductController::class, 'detail'])->name('detail');
 Route::post('/add_to_cart', [ProductController::class, 'addToCart'])->name('add_to_cart');
 Route::get('/cartlist', [ProductController::class, 'cartList']);
+Route::get('/remove_from_cart/{id}', [ProductController::class, 'removeFromCart']);
 
 
