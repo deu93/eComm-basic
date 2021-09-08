@@ -19,7 +19,7 @@ if(Session::has('user')){
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Orders</a>
+        <a class="nav-link" href="myorders">Orders</a>
       </li>
     </ul>
     
@@ -48,7 +48,7 @@ if(Session::has('user')){
             <a class="nav-link" href="{{ route('login') }}">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
+            <a class="nav-link" href="/register">Register</a>
           </li>
         </ul>
       @endif
